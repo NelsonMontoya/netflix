@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Row from './modules/components/Row';
+import requests from './requests';
+import Banner from './modules/components/Banner';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Banner />
+      <Row 
+        title = "Originals"  
+        url = {requests.netflixOrginals}
+        isLargeRow ={true}
+      />
+      <Row title = "Trending Now" url={requests.trendingMovies}/>
+      <Row title = "Top Rated" url={requests.topRated}/>
+      <Row title = "Horror" url={requests.horrorMovies}/>
+      
     </div>
   );
 }
